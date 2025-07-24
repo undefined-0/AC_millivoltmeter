@@ -12,19 +12,19 @@ SHELL = cmd.exe
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
-build-811031185: ../2024NUEDC.syscfg
+build-1563582177: ../AC_millivoltmeter.syscfg
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: SysConfig'
-	"D:/A_Scholastic/33/ti/sysconfig_cli.bat" --script "D:/A_Scholastic/33/workspace1/AC_millivoltmeter/2024NUEDC.syscfg" -o "." -s "D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/.metadata/product.json" --compiler ticlang
+	"D:/A_Scholastic/33/ti/sysconfig_cli.bat" --script "D:/A_Scholastic/33/workspace1/AC_millivoltmeter/AC_millivoltmeter.syscfg" -o "." -s "D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/.metadata/product.json" --compiler ticlang
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
-device_linker.cmd: build-811031185 ../2024NUEDC.syscfg
-device.opt: build-811031185
-device.cmd.genlibs: build-811031185
-ti_msp_dl_config.c: build-811031185
-ti_msp_dl_config.h: build-811031185
-Event.dot: build-811031185
+device_linker.cmd: build-1563582177 ../AC_millivoltmeter.syscfg
+device.opt: build-1563582177
+device.cmd.genlibs: build-1563582177
+ti_msp_dl_config.c: build-1563582177
+ti_msp_dl_config.h: build-1563582177
+Event.dot: build-1563582177
 
 %.o: ./%.c $(GEN_OPTS) | $(GEN_FILES) $(GEN_MISC_FILES)
 	@echo 'Building file: "$<"'

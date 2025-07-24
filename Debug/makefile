@@ -10,7 +10,7 @@ GEN_OPTS__FLAG := @"./device.opt"
 GEN_CMDS__FLAG := -Wl,-l"./device_linker.cmd" 
 
 ORDERED_OBJS += \
-"./2024NUEDC.o" \
+"./AC_millivoltmeter.o" \
 "./ti_msp_dl_config.o" \
 "./startup_mspm0g350x_ticlang.o" \
 "./bsp/calculate.o" \
@@ -148,8 +148,8 @@ AC_millivoltmeter.out: $(OBJS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "2024NUEDC.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "bsp\calculate.o" "bsp\fft.o" "bsp\oled.o" 
-	-$(RM) "2024NUEDC.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "bsp\calculate.d" "bsp\fft.d" "bsp\oled.d" 
+	-$(RM) "AC_millivoltmeter.o" "ti_msp_dl_config.o" "startup_mspm0g350x_ticlang.o" "bsp\calculate.o" "bsp\fft.o" "bsp\oled.o" 
+	-$(RM) "AC_millivoltmeter.d" "ti_msp_dl_config.d" "startup_mspm0g350x_ticlang.d" "bsp\calculate.d" "bsp\fft.d" "bsp\oled.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

@@ -1,6 +1,6 @@
 # FIXED
 
-2024NUEDC.o: ../2024NUEDC.c \
+AC_millivoltmeter.o: ../AC_millivoltmeter.c \
  ti_msp_dl_config.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/msp/msp.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/devices/DeviceFamily.h \
