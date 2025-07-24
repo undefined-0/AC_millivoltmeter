@@ -25,3 +25,6 @@
 * ADC采样IO
 
   * PA27 - ADC12 Channel 0 Pin（AdcResult_U）
+
+* 继电器控制IO
+  * PA2 - 连接继电器模块的GPIO引脚

@@ -105,6 +105,14 @@ extern "C" {
 #define GPIO_ADC0_C0_PIN                                          DL_GPIO_PIN_27
 
 
+
+/* Port definition for Pin Group GPIO_RELAY_CTRL */
+#define GPIO_RELAY_CTRL_PORT                                             (GPIOA)
+
+/* Defines for PIN_RELAY_CTRL: GPIOA.2 with pinCMx 7 on package pin 42 */
+#define GPIO_RELAY_CTRL_PIN_RELAY_CTRL_PIN                       (DL_GPIO_PIN_2)
+#define GPIO_RELAY_CTRL_PIN_RELAY_CTRL_IOMUX                      (IOMUX_PINCM7)
+
 /* clang-format on */
 
 void SYSCFG_DL_init(void);
@@ -113,6 +121,7 @@ void SYSCFG_DL_GPIO_init(void);
 void SYSCFG_DL_SYSCTL_init(void);
 void SYSCFG_DL_I2C_OLED_init(void);
 void SYSCFG_DL_ADC0_init(void);
+
 
 
 #ifdef __cplusplus

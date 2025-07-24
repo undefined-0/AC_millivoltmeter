@@ -75,10 +75,7 @@ AC_millivoltmeter.o: ../AC_millivoltmeter.c \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/dl_wwdt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.h \
  D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h \
- D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/oled.h \
- D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/calculate.h \
- D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/fft.h \
- D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/Hamming02048.h
+ D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/oled.h
 
 ti_msp_dl_config.h:
 
@@ -229,9 +226,3 @@ D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_interrupt.
 D:/A_Scholastic/33/ti/mspm0_sdk_2_04_00_06/source/ti/driverlib/m0p/dl_systick.h:
 
 D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/oled.h:
-
-D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/calculate.h:
-
-D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/fft.h:
-
-D:/A_Scholastic/33/workspace1/AC_millivoltmeter/bsp/Hamming02048.h:
