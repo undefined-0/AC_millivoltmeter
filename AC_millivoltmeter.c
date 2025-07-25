@@ -10,7 +10,7 @@ volatile bool ADC_conv_cplt_flag; // ADC转换完成标志
 volatile uint16_t AdcValue[RESULT_SIZE]; // 采集硬件部分输出的直流电压值
 
 // 为在OLED上显示结果而设的缓冲区
-char buffer[50];
+char buffer[20];
 
 int main(void)
 {
@@ -36,16 +36,19 @@ int main(void)
         // ADC采样完成时将结果写入数组
         AdcValue[i] = DL_ADC12_getMemResult(ADC0_INST, DL_ADC12_MEM_IDX_0);
 
-        /*-----------------------继电器控制逻辑（可能需根据硬件情况再更改）-----------------------*/
-        if(AdcValue[i]>1000) // 所测信号为大信号，直接短接不放大
-        {
-            DL_GPIO_setPins(GPIO_RELAY_CTRL_PORT,GPIO_RELAY_CTRL_PIN_RELAY_CTRL_PIN);
-        }
-        else // 所测信号为小信号，经过放大器
+        /*-----------------------↓↓↓继电器控制逻辑↓↓↓-----------------------*/
+
+        // PA2默认拉低（默认接进来的是大信号，不进行放大，以免对大信号进行放大而造成失真）
+        // 输入信号为100mVpp时，实测最大ADC采样值小于300，故阈值设为300
+        if(AdcValue[i]>300) // 所测信号为大信号（100mVpp~1Vpp），PA2拉低，不进行放大，直接接入交流毫伏表模块
         {
             DL_GPIO_clearPins(GPIO_RELAY_CTRL_PORT,GPIO_RELAY_CTRL_PIN_RELAY_CTRL_PIN);
         }
-        /*-----------------------继电器控制逻辑（可能需根据硬件情况再更改）-----------------------*/
+        else // 所测信号为小信号（0~100mVpp），PA2拉高，经过放大器（x10）后接入交流毫伏表模块
+        {
+            DL_GPIO_setPins(GPIO_RELAY_CTRL_PORT,GPIO_RELAY_CTRL_PIN_RELAY_CTRL_PIN);
+        }
+        /*-----------------------↑↑↑继电器控制逻辑↑↑↑-----------------------*/
         
         // 将当前ADC值格式化为字符串并显示在OLED上
         sprintf(buffer, "ADC Value: %4d", AdcValue[i]);
