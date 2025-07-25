@@ -112,6 +112,12 @@ extern "C" {
 /* Defines for PIN_RELAY_CTRL: GPIOA.2 with pinCMx 7 on package pin 42 */
 #define GPIO_RELAY_CTRL_PIN_RELAY_CTRL_PIN                       (DL_GPIO_PIN_2)
 #define GPIO_RELAY_CTRL_PIN_RELAY_CTRL_IOMUX                      (IOMUX_PINCM7)
+/* Port definition for Pin Group GPIO_RELAY_READ */
+#define GPIO_RELAY_READ_PORT                                             (GPIOB)
+
+/* Defines for PIN_RELAY_READ: GPIOB.24 with pinCMx 52 on package pin 23 */
+#define GPIO_RELAY_READ_PIN_RELAY_READ_PIN                      (DL_GPIO_PIN_24)
+#define GPIO_RELAY_READ_PIN_RELAY_READ_IOMUX                     (IOMUX_PINCM52)
 
 /* clang-format on */
 

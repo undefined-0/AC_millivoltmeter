@@ -14,6 +14,7 @@ const ADC121 = ADC12.addInstance();
 const Board  = scripting.addModule("/ti/driverlib/Board");
 const GPIO   = scripting.addModule("/ti/driverlib/GPIO", {}, false);
 const GPIO1  = GPIO.addInstance();
+const GPIO2  = GPIO.addInstance();
 const I2C    = scripting.addModule("/ti/driverlib/I2C", {}, false);
 const I2C1   = I2C.addInstance();
 const SYSCTL = scripting.addModule("/ti/driverlib/SYSCTL");
@@ -44,6 +45,12 @@ GPIO1.port                                  = "PORTA";
 GPIO1.associatedPins[0].$name               = "PIN_RELAY_CTRL";
 GPIO1.associatedPins[0].assignedPortSegment = "Lower";
 GPIO1.associatedPins[0].assignedPin         = "2";
+
+GPIO2.$name                         = "GPIO_RELAY_READ";
+GPIO2.port                          = "PORTB";
+GPIO2.associatedPins[0].$name       = "PIN_RELAY_READ";
+GPIO2.associatedPins[0].direction   = "INPUT";
+GPIO2.associatedPins[0].pin.$assign = "PB24";
 
 I2C1.$name                             = "I2C_OLED";
 I2C1.basicEnableController             = true;
